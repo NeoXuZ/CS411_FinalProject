@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MsiCommonModule, CardModule } from '@msi/cobalt';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { TooltipModule } from '@msi/cobalt';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { SpecialEventsComponent } from './special-events/special-events.component';
@@ -40,11 +39,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     FormsModule,
     CommonModule,
-    CardModule,
     CommonModule,
-    TooltipModule,
     BrowserAnimationsModule,
-    MsiCommonModule,
     BrowserModule,
     AppRoutingModule,
   ],
