@@ -1,0 +1,11 @@
+
+<h3 style="margin-top: 50px;"><strong>Top Celebrities</strong></h3>
+<div class="grid grid-pad">
+  <a *ngFor="let celebrity of celebrities" class="col-1-4"
+      routerLink="/detail/{{celebrity.id}}">
+    <div class="module celebrity">
+      <h4>{{celebrity.FirstName}}&nbsp;{{celebrity.LastName}}</h4>
+    </div>
+  </a>
+</div>
+<app-celebrity-search></app-celebrity-search>

@@ -1,0 +1,53 @@
+<h2><strong>Celebrity List</strong></h2>
+<ul class="celebrities">
+  <li *ngFor="let celebrity of celebrities">
+    <a routerLink="/detail/{{celebrity.id}}">
+      <span class="badge">{{celebrity.id}}</span> 
+      <span style = "position: relative; bottom: 8px; height: 2em;"> {{celebrity.FirstName}}&nbsp; {{celebrity.LastName}}</span>
+    </a>
+    <button class="delete" title="delete celebrity"
+  (click)="delete(celebrity)">Delete</button>
+  </li>
+</ul>
+<h1 style="position: absolute; left:650px; top:60px;">Add new Celebrity</h1>
+<div [formGroup]="celebrityFormGroup" style="position: absolute; left:600px; bottom:450px; border: solid; padding:20px;padding-right: 40px;">
+    <label>Celebrity FirstName:
+      <input #celebrityFirstName formControlName="FirstName" />
+    </label>
+    <br>
+    <label>Celebrity LastName:
+      <input #celebrityLastName formControlName="LastName" />
+    </label>
+    <br>
+    <label>Age:
+      <input #celebrityAge type="number" formControlName="Age" style = "position: relative; left:98px"/>
+    </label>
+    <br>
+    <label>Gender:
+      <select formControlName="Gender" style = "position: relative; left:77px">
+        <option value="Female">Female</option>
+        <option value="Male">Female</option>
+        <option value="Unknown">Unknown</option>
+      </select>
+    </label>
+    <br>
+    <label>Height:
+      <input #celebrityAge type="number" formControlName="Height" style = "position: relative; left:84px"/><span style = "position: relative; left:88px">cm</span>
+    </label>
+    <br>
+    <label>Weight:
+      <input #celebrityAge type="number" formControlName="Weight" style = "position: relative; left:82px"/><span  style = "position: relative; left:86px">Lb</span>
+    </label>
+    <br>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(this.celebrityFormGroup);" style="position: relative; left:280px;top:6px">
+      add
+    </button>
+    
+  </div>
+  <button (click)="reset();" style="position: absolute; right:180px;bottom:100px">
+    Reset
+  </button>
+  <button (click)="comfirm();" style="position: absolute; right:100px;bottom:100px">
+    Comfirm
+  </button>

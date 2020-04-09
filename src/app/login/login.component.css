@@ -1,0 +1,10 @@
+.test{
+    overflow:hidden;
+  }
+  .test:after{
+    content:'';
+    display:inline-block;
+    width:100%; height:100%;
+    margin-right:-100%;
+    border-bottom:1px solid #000;
+  }

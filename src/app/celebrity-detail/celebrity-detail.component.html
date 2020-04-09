@@ -1,0 +1,45 @@
+<div *ngIf="celebrity" style='position: absolute; left:300px;top:100px'>
+
+  <div [formGroup]="celebrityFormGroup">
+    <h3><strong>{{this.celebrityFormGroup.get('FirstName').value}}&nbsp;{{this.celebrityFormGroup.get('LastName').value}}&nbsp;Profile</strong></h3>
+    <label><i>FirstName:</i></label>
+      <input #celebrityFirstName formControlName="FirstName" style="position: relative; left:40px"/>
+    <br>
+    <label><i>LastName:</i></label>
+      <input #celebrityLastName formControlName="LastName" style="position: relative; left:40px"/>
+    <br>
+    <label><i>Age:</i></label>
+      <input #celebrityAge type="number" formControlName="Age" style="position: relative; left:40px"/>
+    <br>
+    <label><i>Gender: </i></label>
+      <select formControlName="Gender" style="position: relative; left:40px">
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Unknown">Unknown</option>
+      </select>
+    <br>
+    <label ><i>Height:</i></label>
+      <input #celebrityAge type="number" formControlName="Height" style="position: relative; left:40px" /><span>cm</span>
+    <br>
+    <label><i>Weight:</i></label>
+      <input #celebrityAge type="number" formControlName="Weight" style="position: relative; left:40px"><span>Lb</span>
+  </div>
+
+  <div class="btn-inner-section">
+    <button  (click)="goBack()">Back</button>&nbsp;
+    <button  style = 'position: relative; left:100px'(click)="Reset()">Reset</button>
+      <button (click)="Save() " style = 'position: relative; left:105px'>Save</button>
+      </div>
+</div>
+  <style>
+    .btn-inner-section {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  
+    .btn-inner-section .msi-btn {
+      margin: 0 10px;
+    }
+  
+  </style>
+  
